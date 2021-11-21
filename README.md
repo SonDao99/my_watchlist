@@ -1,0 +1,1 @@
+My Watchlist will allow users to add TV shows and movies that they have watched, are watching, or would like to watch. It will allow users to rate the show or movie on a scale of 1 to 5.

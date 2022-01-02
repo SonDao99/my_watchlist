@@ -1,0 +1,313 @@
+@font-face {
+    font-family: Coco;
+    src: url(Fonts/CocoBold-YzEZa.otf);
+}
+
+@font-face {
+    font-family: Ignotum;
+    src: url(Fonts/Ignotum-mLyw2.ttf);
+}
+
+body {
+    font-family: Ignotum;
+    color: white;
+    font-size: 35px;
+    background-color: black;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-family: Coco;
+    font-size: 60px;
+    color: white;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-wrap {
+    position: relative;
+}
+
+.banner-wrap:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    background-image: url(Images/chaplin.jpeg);
+    background-position-y: 35%;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.banner{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-left: 55px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+button {
+    cursor: pointer;
+}
+
+.addItem, .sort, .signIn, .submit {
+    background-color: white /*rgb(194, 189, 189)*/;
+    font-family: inherit;
+    font-weight: 600;
+    color: rgb(70, 69, 69);
+    font-size: 30px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 0;
+    border-width: 0;
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-color: white /*rgb(194, 189, 189)*/;
+}
+
+.submit {
+    color: black;
+    font-weight: lighter;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.addItem:hover, .sort:hover, .signIn:hover, .submit:hover {
+    background-color: rgb(221, 218, 218);
+}
+
+.addItem:active, .sort:active, .signIn:active, .submit:active {
+    background-color: rgb(192, 189, 189);
+}
+
+.container {
+    padding: 40px;
+}
+
+/*Pop-up modal to enter show/movie*/
+
+.overlay {
+    background-color: rgba(0, 0, 0, .7); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.addModal {
+    font-size: 30px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    /*background-color: black;*/
+    /*background-color: transparent;*/
+    /*top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);*/
+    position: relative;
+    width: 500px;
+    max-width: 80%;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 35px;
+    align-items: center;
+    padding-top: 20;
+    text-align: center;
+    background-color: black;
+}
+
+.nameInput, .statusInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    /*gap: 10px;*/
+}
+
+.formSubmit {
+    width: 100%;
+}
+
+.nameInput input {
+    font: inherit;
+    padding: 2px;
+}
+
+form .closeModalDiv {
+    display: flex;
+    align-self: flex-end;
+}
+
+.statusButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    /*padding-top: 5px;*/
+}
+
+.statusButtons input {
+    display: none;  
+}
+
+.statusButtons label {
+    display: inline-block;
+    text-align: center;
+    width: 130px;
+    color: black;
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.statusButtons label:hover {
+    background-color: rgb(221, 218, 218);
+}
+
+.statusButtons input:checked + label {
+    background-color: rgb(151, 150, 150);
+    color: white;
+}
+
+
+/* Styling for the cards: */
+
+.allCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.card {
+    font-family: Ignotum;
+    height: 300px;
+    width: 250px;
+    background-color: rgb(46, 43, 43);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-style: solid;
+    border-color: white;
+}
+
+[data-arrayindex='-1'] {
+    display: none;
+}
+
+/* For the top of the card: */
+
+.cardTop {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.empty {
+    min-height: 30px;
+    min-width: 30px;
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.divClose {
+    display: flex;
+    align-self: flex-start;
+    justify-self: end;
+}
+
+.closeButton, .closeModal{
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    line-height: 0px;
+    height: 25px;
+}
+
+/* For the bottom of the card: */
+
+.rateStat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.watchStatus {
+    width: 250px;
+    font-family: inherit;
+    font-size: 30px;
+    border-radius: 0;
+    border-width: 0;
+    padding: 3px;
+}
+
+/* The star rating system: */
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 40px;
+    color: #444;
+    float: right;
+}
+
+.rating input:not(:checked) ~ label:hover,
+.rating input:not(:checked) ~ label:hover ~ label {
+    color: goldenrod;
+}
+
+.rating input:checked ~ label {
+    color: gold;
+}

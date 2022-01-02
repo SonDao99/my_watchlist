@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Watchlist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Fonts/fontawesome-free-5.15.4-web/css/all.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="banner-wrap">
+        <div class="banner">
+            <div class="name">MY WATCHLIST</div>
+        </div>
+    </div>
+    <div class="buttons">
+        <div class="left">
+            <button class="addItem">Add Show/Movie</button>
+            <!--<button class="sort">Sort By</button>-->
+        </div>
+        <!--<div class="right">
+            <button class="signIn">Sign In</button>
+        </div>-->
+    </div>
+    <div class="container">
+        <div class="allCards">
+            <div class="card" data-arrayindex='-1'>
+                <div class="cardTop">
+                    <div class="empty"></div>
+                    <div class="title"></div>          
+                    <div class="divClose"><button class="closeButton">&times;</button></div>
+                </div>
+                <div class="poster"></div>
+                <div class="rateStat">
+                    <!--Insert rating here-->
+                    <div class="status"><button class="watchStatus"></button></div>
+                </div>
+            </div>
+        </div>
+    <div class="footer"></div>
+
+<!--Modal Section-->
+    <div class="overlay">    
+        <div class="addModal">
+            <form onsubmit="return false" name="newItemForm">
+                <div class="closeModalDiv"><button class="closeModal">&times;</button></div>
+                <div class="nameInput">
+                    <label for="itemName">Enter name of show/movie</label> <br>
+                    <input name="itemName" type="text">
+                </div>
+                <!--Watch status-->
+                <div class="statusInput">
+                    <div>Choose watch status</div>
+                    <div class="statusButtons">
+                        <input type="radio" id="notWatched" name="watchStat">
+                        <label for="notWatched">Not Watched</label>
+                        <input type="radio" id="watching" name="watchStat">
+                        <label for="watching">Watching</label>
+                        <input type="radio" id="watched" name="watchStat">
+                        <label for="watched">Watched</label>
+                    </div>
+                </div>
+                <div>
+                    <div>Rating</div>
+                    <div class="rating">
+                        <input type="radio" name="rate" id="star5">
+                        <label for="star5" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="star4">
+                        <label for="star4" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="star3">
+                        <label for="star3" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="star2">
+                        <label for="star2" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="star1">
+                        <label for="star1" class="fas fa-star"></label>
+                    </div>
+                </div>
+                <div class="formSubmit">
+                    <button class="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
